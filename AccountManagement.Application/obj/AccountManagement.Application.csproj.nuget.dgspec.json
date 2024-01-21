@@ -1,0 +1,304 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Application\\AccountManagement.Application.csproj": {}
+  },
+  "projects": {
+    "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Application\\AccountManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Application\\AccountManagement.Application.csproj",
+        "projectName": "AccountManagement.Application",
+        "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Application\\AccountManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\SaintScraTchY\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SaintScraTchY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\Microsoft\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj": {
+                "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj"
+              },
+              "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Domain\\AccountManagement.Domain.csproj": {
+                "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Domain\\AccountManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj",
+        "projectName": "AccountManagement.Contract",
+        "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj",
+        "packagesPath": "C:\\Users\\SaintScraTchY\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SaintScraTchY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\Microsoft\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj": {
+                "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Domain\\AccountManagement.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Domain\\AccountManagement.Domain.csproj",
+        "projectName": "AccountManagement.Domain",
+        "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Domain\\AccountManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\SaintScraTchY\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SaintScraTchY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\Microsoft\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj": {
+                "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\AccountManagement.Contract\\AccountManagement.Contract.csproj"
+              },
+              "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj": {
+                "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj",
+        "projectName": "Framework",
+        "projectPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\Framework.csproj",
+        "packagesPath": "C:\\Users\\SaintScraTchY\\.nuget\\packages\\",
+        "outputPath": "D:\\Dev\\Projects\\CSharp\\DotNetCore\\AppointmentScheduler\\Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SaintScraTchY\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\Microsoft\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

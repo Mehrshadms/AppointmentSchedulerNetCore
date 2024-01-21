@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EfCoreDialogsState">
+    <option name="keyValueStorage">
+      <map>
+        <entry key="Common:3fa786c2-e2bf-4c5c-922f-0b94b2bde89c:dbContext" value="AppointmentScheduler.InfraStructure.EFCore.AppointmentContext" />
+        <entry key="Common:78660e74-9d38-49c1-b14f-0120eab9da73:dbContext" value="AppointmentScheduler.InfraStructure.EFCore.AppointmentContext" />
+        <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:noBuild" value="false" />
+        <entry key="Common:outputFolder" value="Migrations" />
+        <entry key="Common:useDefaultConnection" value="true" />
+      </map>
+    </option>
+  </component>
+</project>

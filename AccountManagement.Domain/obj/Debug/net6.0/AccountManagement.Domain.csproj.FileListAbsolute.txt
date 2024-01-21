@@ -1,0 +1,17 @@
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\AccountManagement.Domain.deps.json
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\AccountManagement.Domain.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\AccountManagement.Domain.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\AccountManagement.Contract.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\Framework.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\AccountManagement.Contract.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\bin\Debug\net6.0\Framework.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.csproj.AssemblyReference.cache
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.AssemblyInfoInputs.cache
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.AssemblyInfo.cs
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.csproj.CoreCompileInputs.cache
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.csproj.CopyComplete
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\refint\AccountManagement.Domain.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\AccountManagement.Domain.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AccountManagement.Domain\obj\Debug\net6.0\ref\AccountManagement.Domain.dll

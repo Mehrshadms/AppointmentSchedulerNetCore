@@ -1,0 +1,17 @@
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\AppointmentScheduler.Domain.deps.json
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\AppointmentScheduler.Domain.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\AppointmentScheduler.Domain.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\AppointmentScheduler.Contract.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\Framework.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\AppointmentScheduler.Contract.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\bin\Debug\net6.0\Framework.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.csproj.AssemblyReference.cache
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.GeneratedMSBuildEditorConfig.editorconfig
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.AssemblyInfoInputs.cache
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.AssemblyInfo.cs
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.csproj.CoreCompileInputs.cache
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.csproj.CopyComplete
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\refint\AppointmentScheduler.Domain.dll
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\AppointmentScheduler.Domain.pdb
+J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.Domain\obj\Debug\net6.0\ref\AppointmentScheduler.Domain.dll
