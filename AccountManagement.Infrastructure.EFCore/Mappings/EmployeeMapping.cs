@@ -17,6 +17,11 @@ public class EmployeeMapping : IEntityTypeConfiguration<Employee>
 
         builder.HasOne(x => x.Role)
             .WithMany(x => x.Employees)
-            .HasForeignKey(x=>x.RoleId);
+            .HasForeignKey(x => x.RoleId);
+
+        builder.HasMany(x => x.AppointmentEmployees)
+            .WithOne()
+            .HasForeignKey(x => x.EmployeeId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

@@ -2,6 +2,7 @@
 using AppointmentScheduler.Contract.RoomOption;
 using AppointmentScheduler.Domain.Room;
 using Framework.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppointmentScheduler.InfraStructure.EFCore.Repositories;
 
@@ -41,7 +42,36 @@ public class OptionRepository : RepositoryBase<long,Option> , IOptionRepository
         return _context.Options.Select(x => new AddRoomOption
         {
             OptionId = x.Id,
-            StringOption = x.StringOption,
+            StringOption = x.StringOption
         }).ToList();
+    }
+
+    public List<EditRoomOption> GetOptionsByRoom(long id)
+    {
+        var options = _context.Options.Select(x => new EditRoomOption()
+        {
+            OptionId = x.Id,
+            StringOption = x.StringOption,
+            RoomId = id
+        }).ToList();
+        
+        var roomOptions = _context.RoomOptions.Where(x => x.RoomId == id)
+            .Include(x => x.Option)
+            .Select(x => new EditRoomOption
+            {
+                Id = x.Id,
+                OptionId = x.OptionId,
+                RoomId = x.RoomId,
+                StringOption = x.Option.StringOption,
+                HaveOption = x.HaveOption
+            }).ToList();
+
+        for (int i = 0; i < options.Count; i++)
+        {
+            if(roomOptions.Any(x=>x.OptionId == options[i].OptionId))
+                options[i] = roomOptions.SingleOrDefault(ae => ae.OptionId == options[i].OptionId);
+        }
+        
+        return options;
     }
 }

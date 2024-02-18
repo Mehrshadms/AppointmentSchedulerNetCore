@@ -8,10 +8,12 @@ namespace AppointmentScheduler.Application;
 public class AppointmentApplication : IAppointmentApplication
 {
     private readonly IAppointmentRepository _appointmentRepository;
+    private readonly IAppointmentEmployeeRepository _appointmentEmployeeRepository;
 
-    public AppointmentApplication(IAppointmentRepository appointmentRepository)
+    public AppointmentApplication(IAppointmentRepository appointmentRepository, IAppointmentEmployeeRepository appointmentEmployeeRepository)
     {
         _appointmentRepository = appointmentRepository;
+        _appointmentEmployeeRepository = appointmentEmployeeRepository;
     }
 
     private OperationResult IsDateTimeValid(DateTime start, DateTime end,long roomId)
@@ -45,13 +47,29 @@ public class AppointmentApplication : IAppointmentApplication
         if (operationResult.IsSucceeded)
         {
             Appointment appointment = new Appointment(command.Title, startDate,endDate,
-                command.NotificationMessage, command.Description, command.RoomId);
-        
-            _appointmentRepository.Create(appointment);
+                command.NotificationMessage, command.Description, command.RoomId,command.IsForAllEmployees);
+            
+            appointment = _appointmentRepository.Create(appointment);
+            
+            if (!appointment.IsForAllEmployees)
+            {
+                List<AppointmentEmployee> appointmentEmployees = new();
+                foreach (var employee in command.ParticipantEmployees)
+                {
+                    appointmentEmployees.Add(new AppointmentEmployee(appointment.Id,employee));
+                }
+
+                foreach (var role in command.ParticipantRoles)
+                {
+                    appointmentEmployees.Add(new AppointmentEmployee(appointment.Id,role));
+                }
+                _appointmentEmployeeRepository.CreateMultiple(appointmentEmployees);
+            }
+            
             _appointmentRepository.SaveChanges();
         }
         
-        return operationResult;
+        return operationResult.Succeeded();
     }
 
     public OperationResult Edit(EditAppointment command)
@@ -60,9 +78,9 @@ public class AppointmentApplication : IAppointmentApplication
         Appointment appointment = _appointmentRepository.Get(command.Id);
         
         if (appointment == null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+           return operationResult.Failed(ApplicationMessages.RecordNotFound);
 
-        appointment.Edit(command.Title, command.NotificationMessage, command.Description, command.RoomId);
+        appointment.Edit(command.Title, command.NotificationMessage, command.Description, command.RoomId,command.IsForAllEmployees);
         
         _appointmentRepository.SaveChanges();
         return operationResult.Succeeded();
@@ -74,7 +92,7 @@ public class AppointmentApplication : IAppointmentApplication
         Appointment appointment = _appointmentRepository.Get(command.Id);
         
         if (appointment == null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+           return operationResult.Failed(ApplicationMessages.RecordNotFound);
         
         appointment.Postpone(command.PostPoneReason);
         _appointmentRepository.SaveChanges();
@@ -88,7 +106,7 @@ public class AppointmentApplication : IAppointmentApplication
         Appointment appointment = _appointmentRepository.Get(command.Id);
         
         if (appointment == null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+           return operationResult.Failed(ApplicationMessages.RecordNotFound);
         
         appointment.Cancel(command.CancellationReason);
         _appointmentRepository.SaveChanges();
@@ -102,13 +120,13 @@ public class AppointmentApplication : IAppointmentApplication
         Appointment appointment = _appointmentRepository.Get(command.Id);
         
         if (appointment == null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+           return operationResult.Failed(ApplicationMessages.RecordNotFound);
         
         DateTime startDate = command.NewStartDateTime.ToGeorgianDateTimeFull();
         DateTime endDate = command.NewEndDateTime.ToGeorgianDateTimeFull();
 
         if (startDate > endDate || startDate < DateTime.Now)
-            operationResult.Failed(ApplicationMessages.DateTimeInvalid);
+           return operationResult.Failed(ApplicationMessages.DateTimeInvalid);
         
         
         appointment.Reschedule(startDate,endDate);

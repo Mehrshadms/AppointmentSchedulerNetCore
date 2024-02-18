@@ -16,5 +16,10 @@ public class RoleMapping : IEntityTypeConfiguration<Role>
         builder.HasMany(x => x.Employees)
             .WithOne(x => x.Role)
             .HasForeignKey(x => x.RoleId);
+        
+        builder.HasMany(x => x.AppointmentEmployees)
+            .WithOne()
+            .HasForeignKey(x => x.RoleId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

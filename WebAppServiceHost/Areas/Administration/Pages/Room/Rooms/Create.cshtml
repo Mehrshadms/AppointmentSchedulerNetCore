@@ -54,6 +54,21 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                @foreach (var itemOption in Model.AddRoomOptions)
+                {
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="@itemOption.StringOption" class="control-label">@itemOption.StringOption</label>
+                            <input type="checkbox" class="form-control checkbox-inline" 
+                                   name="SelectedOptions" 
+                                   id="@itemOption.OptionId"
+                                   value="@itemOption.OptionId"
+                                   checked="@itemOption.HaveOption">
+                        </div>
+                    </div>
+                }
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
                 <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>

@@ -1,9 +1,6 @@
-using AppointmentScheduler.Application;
+using AccountManagement.Configuration;
 using AppointmentScheduler.Configuration;
-using AppointmentScheduler.Contract.Option;
-using AppointmentScheduler.Domain.Room;
 using AppointmentScheduler.InfraStructure.EFCore;
-using AppointmentScheduler.InfraStructure.EFCore.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 var appointmentDb= builder.Configuration.GetConnectionString("AppointmentDB");
 
 // Add services to the container.
-AppointmentSchedulerBootstrapper.Configure(builder.Services,appointmentDb);
+AppointmentSchedulerBootstrapper.Configure(builder.Services, appointmentDb);
+AccountManagementBootstrapper.Configure(builder.Services, appointmentDb);
 
 builder.Services.AddDbContext<AppointmentContext>(x => x.UseSqlServer(appointmentDb));
 

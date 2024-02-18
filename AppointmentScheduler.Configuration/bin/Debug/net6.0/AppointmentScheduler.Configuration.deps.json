@@ -465,6 +465,23 @@
           }
         }
       },
+      "AccountManagement.Contract/1.0.0": {
+        "dependencies": {
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "AccountManagement.Contract.dll": {}
+        }
+      },
+      "AccountManagement.Domain/1.0.0": {
+        "dependencies": {
+          "AccountManagement.Contract": "1.0.0",
+          "Framework": "1.0.0"
+        },
+        "runtime": {
+          "AccountManagement.Domain.dll": {}
+        }
+      },
       "AppointmentScheduler.Application/1.0.0": {
         "dependencies": {
           "AppointmentScheduler.Contract": "1.0.0",
@@ -476,6 +493,7 @@
       },
       "AppointmentScheduler.Contract/1.0.0": {
         "dependencies": {
+          "AccountManagement.Contract": "1.0.0",
           "Framework": "1.0.0"
         },
         "runtime": {
@@ -484,6 +502,7 @@
       },
       "AppointmentScheduler.Domain/1.0.0": {
         "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
           "AppointmentScheduler.Contract": "1.0.0",
           "Framework": "1.0.0"
         },
@@ -804,6 +823,16 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "AccountManagement.Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "AppointmentScheduler.Application/1.0.0": {
       "type": "project",

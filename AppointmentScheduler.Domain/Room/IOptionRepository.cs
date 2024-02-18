@@ -9,4 +9,5 @@ public interface IOptionRepository : IRepository<long,Option>
     EditOption GetDetail(long id);
     List<OptionViewModel> Search(OptionSearchModel searchModel);
     List<AddRoomOption> GetOptions();
+    List<EditRoomOption> GetOptionsByRoom(long id);
 }

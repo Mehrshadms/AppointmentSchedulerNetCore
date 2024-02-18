@@ -6,4 +6,5 @@ public class EmployeeViewModel
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string RoleName { get; set; }
+    public bool IsRemoved { get; set; }
 }

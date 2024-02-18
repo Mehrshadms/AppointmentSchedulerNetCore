@@ -20,6 +20,10 @@ public class AppointmentMapping : IEntityTypeConfiguration<Appointment>
         builder.HasOne(x => x.Room)
             .WithMany(x => x.Appointments)
             .HasForeignKey(x => x.RoomId);
-        
+
+        builder.HasMany(x => x.AppointmentEmployees)
+            .WithOne()
+            .HasForeignKey(x => x.AppointmentId)
+            .IsRequired();
     }
 }

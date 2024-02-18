@@ -13,9 +13,10 @@ public class RepositoryBase<TKey,TEntity> : IRepository<TKey,TEntity> where TEnt
         _Context = context;
     }
 
-    public void Create(TEntity entity)
+    public TEntity Create(TEntity entity)
     {
-        _Context.Add<TEntity>(entity);
+       var entityEntry = _Context.Add<TEntity>(entity);
+       return entityEntry.Entity;
     }
 
     public TEntity Get(TKey key)

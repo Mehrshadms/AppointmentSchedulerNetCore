@@ -5,6 +5,7 @@ namespace AppointmentScheduler.Domain.Appointment;
 public class Appointment : EntityBase
 {
     public string Title { get; private set; }
+    public bool IsForAllEmployees { get; private set; }
     public DateTime StartDateTime { get; private set; }
     public DateTime EndDateTime { get; private set; }
     public string? NotificationMessage { get; private set; }
@@ -17,8 +18,10 @@ public class Appointment : EntityBase
     public string CancellationReason { get; private set; }
     public long RoomId { get; private set; }
     public Room.Room Room { get; private set; }
+    public List<AppointmentEmployee> AppointmentEmployees { get; set; }
+    
 
-    public Appointment(string title, DateTime startDateTime, DateTime endDateTime, string? notificationMessage, string description, long roomId)
+    public Appointment(string title, DateTime startDateTime, DateTime endDateTime, string? notificationMessage, string description, long roomId, bool isForAllEmployees)
     {
         Title = title;
         StartDateTime = startDateTime;
@@ -26,16 +29,18 @@ public class Appointment : EntityBase
         NotificationMessage = notificationMessage;
         Description = description;
         RoomId = roomId;
+        IsForAllEmployees = isForAllEmployees;
         Cancelled = false;
         Postponed = false;
     }
     
-    public void Edit(string title, string? notificationMessage, string description, long roomId)
+    public void Edit(string title, string? notificationMessage, string description, long roomId, bool isForAllEmployees)
     {
         Title = title;
         NotificationMessage = notificationMessage;
         Description = description;
         RoomId = roomId;
+        IsForAllEmployees = isForAllEmployees;
         Cancelled = false;
         Postponed = false;
     }

@@ -44,6 +44,7 @@ public class RoomApplication : IRoomApplication
             return operationResult.Failed();
         
         EditMultiple(command.SelectedOptions,room.Id);
+        
         room.Edit(command.Name, command.Description, command.Capacity,
             command.LinkToVirtualRoom, command.IsVirtual);
         
@@ -56,7 +57,7 @@ public class RoomApplication : IRoomApplication
         OperationResult operationResult = new();
         Room room = _roomRepository.Get(id);
         if (room == null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+            return operationResult.Failed(ApplicationMessages.RecordNotFound);
         room.Remove();
         _roomOptionRepository.SaveChanges();
         return operationResult.Succeeded();
@@ -67,7 +68,7 @@ public class RoomApplication : IRoomApplication
         OperationResult operationResult = new();
         Room room = _roomRepository.Get(id);
         if (room == null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+            return operationResult.Failed(ApplicationMessages.RecordNotFound);
         room.Restore();
         _roomOptionRepository.SaveChanges();
         return operationResult.Succeeded();
@@ -94,33 +95,56 @@ public class RoomApplication : IRoomApplication
         List<Option> options = _optionRepository.List();
         List<RoomOption> EditroomOptions = _roomOptionRepository.GetListBy(roomId);
         List<RoomOption> CreateroomOptions = new List<RoomOption>();
-        
+
+        // foreach (var command in commands)
+        // {
+        //     if (EditroomOptions.Any(x => x.OptionId == command))
+        //     {
+        //         var roomOptionItem = EditroomOptions.FirstOrDefault(x => x.OptionId == command);
+        //         if (roomOptionItem.HaveOption)
+        //         {
+        //             EditroomOptions.FirstOrDefault(x=>x.OptionId == command).MakeFalse();
+        //         }
+        //         else
+        //         {
+        //             EditroomOptions.FirstOrDefault(x=>x.OptionId == command).MakeTrue();
+        //         }
+        //     }
+        //     else
+        //     {
+        //         RoomOption item = new RoomOption(command, roomId);
+        //         item.MakeTrue();
+        //         CreateroomOptions.Add(item);
+        //     }
+        // }
+
         foreach (var option in options)
         {
             //RoomOption item = new RoomOption(option.Id,roomId);
             RoomOption item = EditroomOptions.FirstOrDefault(x => x.OptionId == option.Id);
-
+        
             if (item == null)
             {
-                item = new RoomOption(option.Id,roomId);
+                RoomOption newItem = new RoomOption(option.Id,roomId);
+                
                 if (commands.Contains(option.Id))
-                {
-                    item.MakeTrue();
-                }
-                CreateroomOptions.Add(item);
+                    newItem.MakeTrue();
+                
+                CreateroomOptions.Add(newItem);
             }
             else
             {
                 if (commands.Contains(option.Id))
                 {
-                    item.MakeTrue();
+                    EditroomOptions.FirstOrDefault(x => x.OptionId == option.Id).MakeTrue();
                 }
                 else
                 {
-                    item.MakeFalse();
+                    EditroomOptions.FirstOrDefault(x => x.OptionId == option.Id).MakeFalse();
                 }
             }
         }
+        
         _roomOptionRepository.CreateMultiple(CreateroomOptions);
         _roomRepository.SaveChanges();
         return operationResult.Succeeded();

@@ -9,7 +9,7 @@ public class AccountContext : DbContext
 {
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Role> Roles { get; set; }
-    public AccountContext(DbContextOptions options) : base(options)
+    public AccountContext(DbContextOptions<AccountContext> options) : base(options)
     {
     }
 

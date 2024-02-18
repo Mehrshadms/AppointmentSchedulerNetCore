@@ -29,6 +29,8 @@ public class AppointmentSchedulerBootstrapper
         services.AddTransient<IAppointmentApplication, AppointmentApplication>();
         services.AddTransient<IAppointmentRepository, AppointmentRepository>();
 
+        services.AddTransient<IAppointmentEmployeeRepository, AppointmentEmployeeRepository>();
+
         services.AddTransient<IAppointmentQuery, AppointmentQuery>();
         
         services.AddDbContext<AppointmentContext>(x => x.UseSqlServer(connectionString));

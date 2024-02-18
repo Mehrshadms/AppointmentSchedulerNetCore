@@ -2,6 +2,7 @@
 using AppointmentScheduler.Domain.Room;
 using AppointmentScheduler.InfraStructure.EFCore.Mappings;
 using Microsoft.EntityFrameworkCore;
+using AppointmentEmployee = AppointmentScheduler.Domain.Appointment.AppointmentEmployee;
 
 namespace AppointmentScheduler.InfraStructure.EFCore;
 
@@ -11,6 +12,7 @@ public class AppointmentContext : DbContext
     public DbSet<RoomOption> RoomOptions { get; set; }
     public DbSet<Room> Rooms { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
+    public DbSet<AppointmentEmployee> AppointmentEmployees { get; set; }
 
     public AppointmentContext(DbContextOptions<AppointmentContext> options) : base(options)
     {
@@ -20,6 +22,7 @@ public class AppointmentContext : DbContext
     {
         var assembly = typeof(OptionMapping).Assembly;
         modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+        // modelBuilder.Entity<AppointmentEmployee>();
         base.OnModelCreating(modelBuilder);
     }
 }

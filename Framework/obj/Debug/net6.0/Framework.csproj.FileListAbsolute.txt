@@ -10,3 +10,15 @@ J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.
 J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\refint\Framework.dll
 J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.pdb
 J:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\ref\Framework.dll
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\bin\Debug\net6.0\Framework.deps.json
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\bin\Debug\net6.0\Framework.dll
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\bin\Debug\net6.0\Framework.pdb
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.csproj.AssemblyReference.cache
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.AssemblyInfoInputs.cache
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.AssemblyInfo.cs
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.csproj.CoreCompileInputs.cache
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.dll
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\refint\Framework.dll
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\Framework.pdb
+D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\Framework\obj\Debug\net6.0\ref\Framework.dll

@@ -24,10 +24,10 @@ public class EmployeeApplication : IEmployeeApplication
         OperationResult operationResult = new();
         
         if (command.Password.Length < 8)
-            operationResult.Failed();
+            return operationResult.Failed();
         
         if (_employeeRepository.Exists(x => x.FirstName == command.FirstName && x.LastName == command.LastName))
-            operationResult.Failed(ApplicationMessages.RecordDuplication);
+            return operationResult.Failed(ApplicationMessages.RecordDuplication);
         
         //Hash
         string password = command.Password;
@@ -43,11 +43,11 @@ public class EmployeeApplication : IEmployeeApplication
         OperationResult operationResult = new();
         Employee employee = _employeeRepository.Get(command.Id);
         if (employee is null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+            return operationResult.Failed(ApplicationMessages.RecordNotFound);
         
         if (_employeeRepository
             .Exists(x => x.FirstName == command.FirstName && x.LastName == command.LastName && x.Id != command.Id))
-            operationResult.Failed(ApplicationMessages.RecordDuplication);
+            return operationResult.Failed(ApplicationMessages.RecordDuplication);
         
         employee.Edit(command.FirstName, command.LastName,command.RoleId,command.PhoneNumber);
         
@@ -81,15 +81,15 @@ public class EmployeeApplication : IEmployeeApplication
         OperationResult operationResult = new();
 
         if (command.Password.Length < 8)
-            operationResult.Failed();
+            return operationResult.Failed();
         
         if (command.Password != command.RePassword)
-            operationResult.Failed();
+            return operationResult.Failed();
         
         Employee employee = _employeeRepository.Get(command.Id);
         
         if (employee is null)
-            operationResult.Failed(ApplicationMessages.RecordNotFound);
+            return operationResult.Failed(ApplicationMessages.RecordNotFound);
 
         //Hash
         string password = command.Password;
@@ -102,6 +102,30 @@ public class EmployeeApplication : IEmployeeApplication
     public List<EmployeeViewModel> Search(EmployeeSearchModel searchModel)
     {
         return _employeeRepository.Search(searchModel);
+    }
+
+    public OperationResult Remove(long id)
+    {
+        OperationResult operationResult = new();
+        Employee employee = _employeeRepository.Get(id);
+        if (employee is null)
+           return operationResult.Failed(ApplicationMessages.RecordNotFound);
+        
+        employee.Remove();
+        _employeeRepository.SaveChanges();
+        return operationResult.Succeeded();
+    }
+
+    public OperationResult Restore(long id)
+    {
+        OperationResult operationResult = new();
+        Employee employee = _employeeRepository.Get(id);
+        if (employee is null)
+            return operationResult.Failed(ApplicationMessages.RecordNotFound);
+        
+        employee.Restore();
+        _employeeRepository.SaveChanges();
+        return operationResult.Succeeded();
     }
 
     public void Logout()

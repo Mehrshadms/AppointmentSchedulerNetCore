@@ -54,9 +54,13 @@ public class OptionApplication : IOptionApplication
         return _optionRepository.Search(searchModel);
     }
 
-    List<AddRoomOption> IOptionApplication.GetOptions()
+    public List<AddRoomOption> GetOptionsForCreate()
     {
         return _optionRepository.GetOptions();
     }
 
+    public List<EditRoomOption> GetOptionsByRoom(long id)
+    {
+        return _optionRepository.GetOptionsByRoom(id);
+    }
 }

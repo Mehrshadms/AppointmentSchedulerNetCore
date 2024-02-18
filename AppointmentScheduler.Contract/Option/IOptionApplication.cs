@@ -9,5 +9,6 @@ public interface IOptionApplication
     OperationResult Edit(EditOption command);
     EditOption GetDetail(long id);
     List<OptionViewModel> Search(OptionSearchModel searchModel);
-    List<AddRoomOption> GetOptions();
+    List<AddRoomOption> GetOptionsForCreate();
+    List<EditRoomOption> GetOptionsByRoom(long id);
 }

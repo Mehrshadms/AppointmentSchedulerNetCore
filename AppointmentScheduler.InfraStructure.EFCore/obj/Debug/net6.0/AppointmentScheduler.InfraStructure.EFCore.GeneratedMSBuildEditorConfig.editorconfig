@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AppointmentScheduler.InfraStructure.EFCore
 build_property.ProjectDir = D:\Dev\Projects\CSharp\DotNetCore\AppointmentScheduler\AppointmentScheduler.InfraStructure.EFCore\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

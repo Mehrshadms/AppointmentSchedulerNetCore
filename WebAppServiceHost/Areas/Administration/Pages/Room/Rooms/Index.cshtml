@@ -53,8 +53,8 @@
                                 <th>#</th>
                                 <th>نام</th>
                                 <th>ظرفیت</th>
-                                <th>وضعیت</th>
-                                <th>مجازی</th>
+                                <th>مجازی؟</th>
+                                <th>وضعیت؟</th>
                                 <th>عملیات</th>
                             </tr>
                             </thead>
@@ -76,7 +76,6 @@
                                         }
                                     </td>
                                     <td>
-                                        
                                         @if (item.IsRemoved)
                                         {
                                             <a class="btn btn-success waves-effect waves-light m-b-5" asp-page="./index" asp-page-handler="Restore" asp-route-id="@item.Id">بازگردان</a>

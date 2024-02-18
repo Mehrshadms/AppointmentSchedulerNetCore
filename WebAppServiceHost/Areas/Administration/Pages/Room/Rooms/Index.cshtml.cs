@@ -30,7 +30,7 @@ public class Index : PageModel
     {
         CreateRoom command = new CreateRoom
         {
-            AddRoomOptions = _optionApplication.GetOptions()
+            AddRoomOptions = _optionApplication.GetOptionsForCreate()
         };
         return Partial("./Create", command);
     }
@@ -43,7 +43,7 @@ public class Index : PageModel
     public IActionResult OnGetEdit(long id)
     {
         EditRoom command = _roomApplication.GetDetail(id);
-        command.AddRoomOptions = _optionApplication.GetOptions();
+        command.EditRoomOptions = _optionApplication.GetOptionsByRoom(id);
         return Partial("./Edit", command);
     }
     

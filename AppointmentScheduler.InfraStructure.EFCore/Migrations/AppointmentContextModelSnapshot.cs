@@ -17,10 +17,71 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.20")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("AccountManagement.Domain.Employee.Employee", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("AccountManagement.Domain.Role.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Role");
+                });
 
             modelBuilder.Entity("AppointmentScheduler.Domain.Appointment.Appointment", b =>
                 {
@@ -28,7 +89,7 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("CancellationReason")
                         .HasMaxLength(1024)
@@ -46,6 +107,9 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
 
                     b.Property<DateTime>("EndDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsForAllEmployees")
+                        .HasColumnType("bit");
 
                     b.Property<string>("NotificationMessage")
                         .HasMaxLength(2048)
@@ -82,13 +146,55 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                     b.ToTable("Appointments", (string)null);
                 });
 
+            modelBuilder.Entity("AppointmentScheduler.Domain.Appointment.AppointmentEmployee", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("AppointmentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("DidParticipate")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRoleBased")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AppointmentEmployees", (string)null);
+                });
+
             modelBuilder.Entity("AppointmentScheduler.Domain.Room.Option", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -109,7 +215,7 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
@@ -147,7 +253,7 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
@@ -170,6 +276,17 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                     b.ToTable("RoomOptions", (string)null);
                 });
 
+            modelBuilder.Entity("AccountManagement.Domain.Employee.Employee", b =>
+                {
+                    b.HasOne("AccountManagement.Domain.Role.Role", "Role")
+                        .WithMany("Employees")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("AppointmentScheduler.Domain.Appointment.Appointment", b =>
                 {
                     b.HasOne("AppointmentScheduler.Domain.Room.Room", "Room")
@@ -179,6 +296,27 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                         .IsRequired();
 
                     b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("AppointmentScheduler.Domain.Appointment.AppointmentEmployee", b =>
+                {
+                    b.HasOne("AppointmentScheduler.Domain.Appointment.Appointment", null)
+                        .WithMany("AppointmentEmployees")
+                        .HasForeignKey("AppointmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AccountManagement.Domain.Employee.Employee", null)
+                        .WithMany("AppointmentEmployees")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("AccountManagement.Domain.Role.Role", null)
+                        .WithMany("AppointmentEmployees")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AppointmentScheduler.Domain.Room.RoomOption", b =>
@@ -198,6 +336,23 @@ namespace AppointmentScheduler.InfraStructure.EFCore.Migrations
                     b.Navigation("Option");
 
                     b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("AccountManagement.Domain.Employee.Employee", b =>
+                {
+                    b.Navigation("AppointmentEmployees");
+                });
+
+            modelBuilder.Entity("AccountManagement.Domain.Role.Role", b =>
+                {
+                    b.Navigation("AppointmentEmployees");
+
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("AppointmentScheduler.Domain.Appointment.Appointment", b =>
+                {
+                    b.Navigation("AppointmentEmployees");
                 });
 
             modelBuilder.Entity("AppointmentScheduler.Domain.Room.Option", b =>

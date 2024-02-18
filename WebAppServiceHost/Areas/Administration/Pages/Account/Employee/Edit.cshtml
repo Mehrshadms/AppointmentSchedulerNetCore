@@ -1,0 +1,55 @@
+﻿@model AppointmentScheduler.Contract.Appointment.EditAppointment
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">ایجاد گروه محصول جدید</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Edit"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">Title</label>
+                    <input type="text" class="form-control" asp-for="Title">
+                    <span asp-validation-for="Title" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="RoomId" class="control-label">RoomId</label>
+                    <select asp-items='new SelectList(Model.AvailableRooms,"Id","Name")' asp-for="RoomId" placeholder="گروه محصول">
+                        <option value="0">انتخاب اتاق</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group no-margin">
+                        <label asp-for="NotificationMessage" class="control-label">NotificationMessage</label>
+                        <textarea class="form-control autogrow" asp-for="NotificationMessage"
+                                      style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                        <span asp-validation-for="NotificationMessage" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label">Description</label>
+                        <textarea class="form-control autogrow" asp-for="Description"
+                                                              style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                        <span asp-validation-for="Description" class="error"></span>
+                    </div>
+                </div>
+            </div>
+            <input value="@Model.Id" asp-for="Id" type="hidden"/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+                <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+            </div>
+        </div>
+    </div>
+</form>

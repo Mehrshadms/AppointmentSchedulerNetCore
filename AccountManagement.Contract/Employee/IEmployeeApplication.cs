@@ -9,6 +9,8 @@ public interface IEmployeeApplication
     OperationResult Login(EmployeeLogin command);
     OperationResult ChangePassword(ChangePassword command);
     List<EmployeeViewModel> Search(EmployeeSearchModel searchModel);
+    OperationResult Remove(long id);
+    OperationResult Restore(long id);
     
     void Logout();
     EditEmployee GetDetail(long id);
