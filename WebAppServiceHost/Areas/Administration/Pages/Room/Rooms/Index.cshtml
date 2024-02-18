@@ -5,7 +5,7 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد اتاق جدید</a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">Create a Room</a>
         </p>
     </div>
 </div>
@@ -14,24 +14,24 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">جستجو دراتاقات</h3>
+                <h3 class="panel-title">Search In Rooms</h3>
             </div>
             <div class="panel-body">
                 <form class="form-inline" role="form" method="get">
                     <div class="form-group">
                         <label asp-for="@Model.RoomSearchModel.Name" class="sr-only"></label>
-                        <input asp-for="@Model.RoomSearchModel.Name" type="text" class="form-control" placeholder="نام گروه محصولی">
+                        <input asp-for="@Model.RoomSearchModel.Name" type="text" class="form-control" placeholder="Conference Room 05">
                     </div>
                     <div class="form-group">
                         <label asp-for="@Model.RoomSearchModel.LeastCapacity" class="sr-only"></label>
-                        <input asp-for="@Model.RoomSearchModel.LeastCapacity" type="number" class="form-control" placeholder="نام گروه محصولی">
+                        <input asp-for="@Model.RoomSearchModel.LeastCapacity" type="number" class="form-control" placeholder="20">
                     </div>
                     <div class="form-group">
                         <label asp-for="@Model.RoomSearchModel.IsVirtual" class="sr-only"></label>
-                        <input asp-for="@Model.RoomSearchModel.IsVirtual" class="form-control checkbox" type="checkbox" placeholder="نام گروه محصولی">
+                        <input asp-for="@Model.RoomSearchModel.IsVirtual" class="form-control checkbox" type="checkbox" placeholder="True">
                     </div>
-                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
-                    <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">Search</button>
+                    <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">See All</a>
                 </form>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">لیست اتاقات</h3>
+                <h3 class="panel-title">Rooms List</h3>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -51,11 +51,11 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>نام</th>
-                                <th>ظرفیت</th>
-                                <th>مجازی؟</th>
-                                <th>وضعیت؟</th>
-                                <th>عملیات</th>
+                                <th>Title</th>
+                                <th>Capacity</th>
+                                <th>Virtual</th>
+                                <th>Status?</th>
+                                <th>Operations</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -78,19 +78,19 @@
                                     <td>
                                         @if (item.IsRemoved)
                                         {
-                                            <a class="btn btn-success waves-effect waves-light m-b-5" asp-page="./index" asp-page-handler="Restore" asp-route-id="@item.Id">بازگردان</a>
+                                            <a class="btn btn-success waves-effect waves-light m-b-5" asp-page="./index" asp-page-handler="Restore" asp-route-id="@item.Id">Restore</a>
 
                                         }
                                         else
                                         {
-                                            <a class="btn btn-danger waves-effect waves-light m-b-5" asp-page="./index" asp-page-handler="Remove" asp-route-id="@item.Id">حذف کن</a>
+                                            <a class="btn btn-danger waves-effect waves-light m-b-5" asp-page="./index" asp-page-handler="Remove" asp-route-id="@item.Id">Remove</a>
 
                                         }
                                     </td>
                                     <td>
                                         <a class="btn btn-warning pull-right m-rl-5"
                                            href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                            <i class="fa fa-edit"></i> ویرایش
+                                            <i class="fa fa-edit"></i>Edit
                                         </a>
                                     </td>
                                 </tr>

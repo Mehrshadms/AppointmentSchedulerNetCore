@@ -1,12 +1,10 @@
 ﻿using AppointmentScheduler.Contract.Appointment;
-using AppointmentScheduler.Contract.Option;
 using AppointmentScheduler.Contract.Room;
 using Framework.Application;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace WebAppServiceHost.Areas.Administration.Pages.Appointment.Scheduler;
+namespace WebAppServiceHost.Areas.Administration.Pages.Appointments.Appointment;
 
 public class Index : PageModel
 {

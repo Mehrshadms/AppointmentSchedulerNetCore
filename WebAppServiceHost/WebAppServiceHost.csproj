@@ -30,9 +30,9 @@
       <AdditionalFiles Include="Areas\Administration\Pages\Room\Options\Create.cshtml" />
       <AdditionalFiles Include="Areas\Administration\Pages\Room\Options\Edit.cshtml" />
       <AdditionalFiles Include="Areas\Administration\Pages\Room\Options\Index.cshtml" />
-      <AdditionalFiles Include="Areas\Administration\Pages\Appointment\Scheduler\Create.cshtml" />
-      <AdditionalFiles Include="Areas\Administration\Pages\Appointment\Scheduler\Edit.cshtml" />
-      <AdditionalFiles Include="Areas\Administration\Pages\Appointment\Scheduler\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Administration\Pages\Appointments\Appointment\Create.cshtml" />
+      <AdditionalFiles Include="Areas\Administration\Pages\Appointments\Appointment\Edit.cshtml" />
+      <AdditionalFiles Include="Areas\Administration\Pages\Appointments\Appointment\Index.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
